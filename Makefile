@@ -6,9 +6,11 @@
 #    By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 13:17:11 by yothmani          #+#    #+#              #
-#    Updated: 2023/02/18 16:10:22 by yothmani         ###   ########.fr        #
+#    Updated: 2023/02/20 12:50:42 by yothmani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
