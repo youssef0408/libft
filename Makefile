@@ -10,8 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-#ici sont les varaibles 
-
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
