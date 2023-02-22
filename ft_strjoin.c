@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 13:20:58 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/21 13:26:34 by yothmani         ###   ########.fr       */
+/*   Created: 2023/02/21 12:24:55 by yothmani          #+#    #+#             */
+/*   Updated: 2023/02/21 19:30:51 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	const char	*str;
-	size_t		i;
+	int		i;
+	int		j;
+	char	*s3;
 
-	str = s;
 	i = 0;
-	while (n > i)
+	j = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	s3 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (s3 == NULL)
+		return (0);
+	while (s1[i])
 	{
-		if (str[i] == c)
-			return (&((char *)s)[i]);
+		s3[i] = s1[i];
 		i++;
 	}
-	return (0);
+	while (s2[j])
+	{
+		s3[i] = s2[j];
+		i++;
+		j++;
+	}
+	s3[i] = '\0';
+	return (s3);
 }
-
-// int	main(void)
-// {
-// 	char	*s1;
-// 	int		o;
-
-// 	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-// 	o = -1;
-// 	printf("%s\n", (char *)ft_memchr(tab, o, 7));
-// 	printf("%s\n", (char *)memchr(tab, o, 7));
-// 	return (0);
-// }

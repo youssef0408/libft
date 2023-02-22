@@ -6,13 +6,14 @@
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:31:33 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/20 12:30:38 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/02/21 09:13:59 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+
+// #include <stdio.h>
+// #include <string.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -40,12 +41,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-int	main(void)
-{
-	const char *t1 = "";
-	const char *t2 = "l";
-	int len = ft_strlen(t1);
 
-	printf("%s\n", ft_strnstr(t1, t2, len));
-	printf("%s\n", strnstr(t1, t2, len));
-}
+// int	main(void)
+// {
+// 	const char	*t1;
+// 	const char	*t2;
+// 	int			len;
+
+// 	t1 = "";
+// 	t2 = "l";
+// 	len = ft_strlen(t1);
+// 	printf("%s\n", ft_strnstr(t1, t2, len));
+// 	printf("%s\n", strnstr(t1, t2, len));
+// }

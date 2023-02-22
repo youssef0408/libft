@@ -6,7 +6,7 @@
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:52:27 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/20 12:05:34 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/02/21 09:57:12 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,11 @@ int	ft_atoi(const char *str)
 	num = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		{
-			sign *= -1;
+	if (str[i] == '+')
 		i++;
-		}
-		else if (str[i] == '+')
+	else if (str[i] == '-')
+	{
+		sign *= -1;
 		i++;
 	}
 	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
@@ -40,3 +37,11 @@ int	ft_atoi(const char *str)
 	}
 	return (num * sign);
 }
+
+// int main (void)
+// {
+// 	char *test = "\n\n\n  -46\b9 \n5d6";
+
+// 	printf("%d\n", ft_atoi(test));
+// 	printf("%d\n", atoi(test));
+// }
