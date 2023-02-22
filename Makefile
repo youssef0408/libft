@@ -3,13 +3,12 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+         #
+#    By: yothmani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 13:17:11 by yothmani          #+#    #+#              #
-#    Updated: 2023/02/21 20:25:56 by yothmani         ###   ########.fr        #
+#    Updated: 2023/02/21 20:42:38 by yothmani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
