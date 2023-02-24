@@ -3,103 +3,116 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yothmani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:04:35 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/23 22:29:45 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:56:29 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	int		count;
-    
-    count = 0;  
+	int	count;
+
+	count = 0;
 	while (*s)
 	{
-    if (*s == c)
-            count++;
-	    s++;
+		if (*s == c)
+			count++;
+		s++;
 	}
-    return (count + 1);
+	return (count);
 }
 
-char *ft_cut_str(const char *str, int *start, char c)
+static char	*ft_cut_str(const char *str, char c)
 {
-    int i;
-    int word_len;
-    char *new;
+	int		i;
+	int		word_len;
+	char	*new;
 
-    i = 0;
-    word_len = *start - i;
-    // tamano de nuestra palabra
-    while (str[*start + i] && str[*start + i] != c)
-        i++;
-    *start += i;
-    // crear el tamano de la palabra
-    new = malloc((i + 1 ) * sizeof(char));
-    if (!new)
-    return (NULL);
-    // salvar la pablabra
-    i = 0;
-    while (i < *start - word_len)
-    {
-        new[i] = str[word_len + i];
-        i++;
-    }
-    new[i] = '\0';
-    return (new);
+	i = 0;
+	word_len = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i] != '\0')
+		i++;
+	new = malloc((sizeof(char) * i) + 1);
+	if (!new)
+		return (NULL);
+	while (word_len < i)
+	{
+		new[word_len] = str[word_len];
+		word_len++;
+	}
+	new[word_len] = '\0';
+	return (new);
 }
 
-char **ft_split(char const *s, char c)
+static void	*ft_free(char **tab, int i)
 {
-    char **tab;
-    int start;
-    int i;
-    int x;
+	int	j;
 
-    x = count_words(s, c);
-    i = 0;
-    start = 0;
-    if(!s)
-        return (NULL);
-    tab = malloc((x + 1) * sizeof(char *));
-    if (!tab)
-        return (NULL);
-    while (i < x - 1)
-    {
-        while (s[start] == c)
-            start++;
-        tab[i] = ft_cut_str(s, &start, c);
-        if (!tab[i])
-            return (NULL);
-        i++;
-    }
-    tab[i] = NULL;
-    return (tab);
+	j = 0;
+	if (tab)
+	{
+		while (j < i)
+		{
+			if (tab[j])
+				free(tab[j]);
+			j++;
+		}
+		free(tab);
+	}
+	return (NULL);
 }
 
-int main(void)
+char	**ft_split(char const *s, char c)
 {
-char *s = "      ";
-char c = ' ';
-char **result = ft_split(s, c);
+	char	**tab;
+	int		i;
 
-//printf("%s\n", *ft_split(s, c));
+	i = 0;
+	tab = malloc(sizeof(char *) * (count_words((char *)s, c)));
+	if (!tab)
+		return (NULL);
+	if (!s)
+		return (tab);
+	while (*s != '\0')
+	{
+		while ((*s != '\0') && (*s == c))
+			s++;
+		if (*s != 0)
+		{
+			tab[i] = ft_cut_str((char *)s, c);
+			if (tab[i] == 0)
+				return (ft_free(tab, i));
+			i++;
+		}
+		while ((*s != '\0') && (*s != c))
+			s++;
+	}
+	tab[i] = 0;
+	return (tab);
+}
 
-
-
-    char **words = ft_split(s, c);
-    if (!words)
-         return (1);
-    int i = 0;
-    while (words[i])
-    {
-         printf("%s", words[i]);
-         i++;
-         
-    }
-    return (0);
-    }
+// int	main(void)
+// {
+// 	char	*s;
+// 	char	c;
+// 	char	**words;
+// 	int		i;
+// 	s = "       ";
+// 	c = ' ';
+// 	words = ft_split(s, c);
+// 	i = 0;
+// 	while (words[i])
+// 	{
+// 		printf("%s", words[i]);
+// 		i++;
+// 	}
+// 	printf("%s", words[0]);
+// 	//printf("%c\n", ' ');
+// 	return (0);
+// }
