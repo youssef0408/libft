@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yothmani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 14:51:26 by yothmani          #+#    #+#             */
-/*   Updated: 2023/03/01 15:26:14 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:18:04 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    while (*lst)
-    lst++;
-    new = lst -> next;
+	t_list	*last_elem;
+
+	if (*lst)
+	{
+		last_elem = ft_lstlast(*lst);
+		last_elem->next = new;
+	}
+	else
+		*lst = new;
 }
