@@ -6,7 +6,7 @@
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:09:19 by yothmani          #+#    #+#             */
-/*   Updated: 2023/03/03 13:11:28 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:43:39 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
-/*
-int main (void)
-{
-  const char *s = "bonjour";
-  int c = 'p';
-  printf("%s\n", strrchr(s, c));
-  printf("%s\n", ft_strrchr(s, c));
-}*/

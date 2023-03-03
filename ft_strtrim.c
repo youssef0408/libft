@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yothmani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:24:34 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/23 20:26:34 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:43:52 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s2[i] = '\0';
 	return (s2);
 }
-
-//  int	main(void)
-//  {
-//  	char s1[] = "AHMEDBENHA";
-// 	char *s2 = "AH";
-
-//  	printf("%s\n", ft_strtrim(s1, s2));
-// }
