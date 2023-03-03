@@ -6,7 +6,7 @@
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:58:17 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/21 10:29:30 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:31:36 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	d = dst;
 	s = src;
+	if (!dst || !src)
+		return (0);
 	if (!n || dst == src)
 		return (dst);
 	if (d < s)

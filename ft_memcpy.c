@@ -6,7 +6,7 @@
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:02:09 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/21 10:28:49 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:26:25 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	s = (unsigned char *)src;
 	if (!n || dst == src)
 		return (dst);
+	if (!dst || !src)
+		return (0);
 	while (n > 0)
 	{
 		d[i] = s[i];
@@ -31,16 +33,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-// int	main(void)
-// {
-// 	char	*t1;
-// 	char	*t2;
-// 	size_t	n;
-
-// 	t1 = "0";
-// 	t2 = "0";
-// 	n = 3;
-// 	printf("%s\n", ft_memcpy(t1, t2, n));
-// 	printf("%s\n", memcpy(t1, t2, n));
-// }

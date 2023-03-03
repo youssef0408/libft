@@ -6,7 +6,7 @@
 /*   By: yothmani <yothmani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 13:43:58 by yothmani          #+#    #+#             */
-/*   Updated: 2023/02/24 17:07:25 by yothmani         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:29:51 by yothmani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = s1;
 	str2 = s2;
+	if (!s2 || !s1)
+		return (0);
 	while (n--)
 	{
 		if (*str1 != *str2)
